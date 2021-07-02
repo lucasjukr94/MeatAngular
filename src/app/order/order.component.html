@@ -1,0 +1,34 @@
+{{orderForm.valid}}
+{{orderForm.value | json}}
+
+<p>Order</p>
+<form [formGroup]="orderForm" novalidate>
+    <h3>Endereço de Entrega</h3><br/>
+    <mt-input-container>
+        Endereço: <input type="text" required minlength="3" formControlName="address" />
+    </mt-input-container>
+    <br/>
+    <mt-input-container>
+        Número: <input type="number" required minlength="1" formControlName="numero" />
+    </mt-input-container>
+    <br/>
+    <mt-input-container>
+        Complemento: <input type="text" formControlName="complemento" />
+    </mt-input-container>
+    <br/>
+
+    <h3>Itens do Pedido</h3>
+    <mt-order-items [items]="cartItems()" 
+        (increaseQty)="increaseQty($event)"
+        (decreaseQty)="decreaseQty($event)"
+        (removeQty)="removeQty($event)"></mt-order-items>
+
+    <h3>Custo do Pedido</h3>
+    <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs>
+
+    <h3>Forma de Pagamento</h3><br/>
+    <mt-radio [options]="paymentOptions" formControlName="paymentOption" required></mt-radio>
+
+    <h3>Finalizar Compra</h3>
+    <button (click)="checkOrder(orderForm?.value)" [disabled]="orderForm?.invalid || cartItems().length === 0">Comprar</button>
+</form>

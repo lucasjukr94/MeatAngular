@@ -1,0 +1,16 @@
+<p>Shopping Cart</p>
+<div class="cart-box">
+    <div *ngIf="!items().length">
+        <p>Seu carrinho está vazio!</p>
+    </div>
+    <div *ngFor="let item of items()">
+        <p>
+            Nome: ({{item.quantity}}x) {{item.menuItem.name}}
+            , Valor: {{item.value() | currency: 'BRL': true}}
+            <a (click)="removeItem(item)">X</a>
+        </p>
+    </div>
+    <p>Total: {{total() | currency: 'BRL': true}}</p>
+    <button (click)="clear()">Limpar</button>
+    <button [routerLink]="['/order']">Comprar</button>
+</div>

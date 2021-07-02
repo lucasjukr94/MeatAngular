@@ -1,0 +1,57 @@
+Configuração:
+1) Instalar o LTS do Node, a versão 7.13.0 está com problema, por isso não instalar o atual
+	-https://nodejs.org/pt-br/download/
+2) npm install -g @angular/cli no prompt
+3) cmd: ng new jedi-academy --prefix=jad
+	-cria o projeto jedi-academy
+	-todos os componentes criados terão o prefixo "jad"
+4) cmd: ng serve (dentro do diretório do projeto) ou npm start
+	-inicializa um servidor pro angular
+5) cmd: ng g c header, ou ng generate component NomeDoComponente
+	-cria um novo componente no projeto
+6) cmd: npm install --save-dev @types/jasmine
+	-permite o uso de alguns métodos no typescript
+7) cmd: npm install -g @angular/http@latest
+	-instala as bibliotecas para comunicar com as apis do programa
+	-https://stackoverflow.com/questions/38510369/cannot-find-module-angular-http
+8) cmd: npm install -g rxjs-compat --save
+	-instala as bibliotecas para tratar a resposta da api
+	-https://stackoverflow.com/questions/49840152/angular-has-no-exported-member-observable
+	-https://stackoverflow.com/questions/37208801/property-map-does-not-exist-on-type-observableresponse
+9) para testar um servidor de api
+	-cmd: json-server db.json, vai fornecer um endereço localhost:3000 e cria se não existir um arquivo json chamado db, onde estarão os dados simulados
+10) cmd: npm install --save @angular/animations
+	cmd: npm install --save web-animations-js
+	-baixa o pacote de animações do angular, não existe por default, é necessário instalar
+11) cmd: ng build --prod
+	-geração do build de produção do projeto
+	-cria o arquivo dist, para publicação
+	- --prod está deprecated, não precisa colocar
+12) cmd: ng build --base-href /meat/
+	-cria um build dizendo que a raiz do programa está no diretório meat, sendo possível publica a pasta meat no IIS ou Apache, github page etc...
+	-obs: ficaria http://localhost/meat/#/...
+13) servidor customizado do json-server
+	-cmd: npm install json-server --save-dev (na pasta do programa)
+	-cmd: node backend/server (na pasta do programa)
+14) para compilar o typescript
+	-cmd: tsc
+	-é necessário que o arquivo typescript esteja junto com um arquivo tsconfig.json
+
+Conceitos:
+-Componente:
+	-possui HTML, CSS, TypeScript
+	-serve para criar elementos DOM no projeto
+-Diretivas:
+	-são comandos do angular para fazer uma condição para exibição de um dado
+	-*ngFor="let variavel for variaveis"
+	-*ngIf="true"
+	-etc...
+-Property-Binding:
+	-liga os valores do typescript do angular com os valores das propriedades do HTML
+	-[propriedadeHTML]="<expressão do angular>"
+-O projeto angular possui o componente app criado por default
+	-ele é considerado o componente pai que vai chamar os outros componentes
+-Classe de serviço:
+	-usado para comunicar com o back-end do programa
+	-para passar um serviço no construtor de um componente, é necessário importar no app.module.ts a classe e fornecer a classe na array providers[]
+	-https://stackoverflow.com/questions/47236963/no-provider-for-httpclient

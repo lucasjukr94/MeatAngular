@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td>Itens:</td>
+        <td>{{itemsValue | currency:'BRL':true}}</td>
+    </tr>
+    <tr>
+        <td>Frete:</td>
+        <td>{{delivery | currency:'BRL':true}}</td>
+    </tr>
+    <tr>
+        <td>Total:</td>
+        <td>{{total() | currency:'BRL':true}}</td>
+    </tr>
+</table>

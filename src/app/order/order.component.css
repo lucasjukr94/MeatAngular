@@ -1,0 +1,7 @@
+.has-sucess{
+    border:solid medium green;
+}
+
+.has-error{
+    border:solid medium red;
+}

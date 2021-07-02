@@ -1,0 +1,23 @@
+<h3>Login</h3>
+
+<form [formGroup]="loginForm">
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <mt-input-container>
+                    <input type="text" formControlName="email"/>
+                </mt-input-container>
+            </td>
+        </tr>
+        <tr>
+            <td>Senha:</td>
+            <td>
+                <mt-input-container>
+                    <input type="password" formControlName="password"/>
+                </mt-input-container>
+            </td>
+        </tr>
+    </table>
+    <button type="button" (click)="login()">Entrar</button>
+</form>

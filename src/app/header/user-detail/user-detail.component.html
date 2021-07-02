@@ -1,0 +1,9 @@
+<h3>Detalhes do usuário</h3>
+
+<span *ngIf="isLoggedIn(); else notLoggedIn">
+    Olá {{user()?.name}} | <a (click)="logout()">Sair</a>
+</span>
+
+<ng-template #notLoggedIn>
+    <a (click)="login()">Entrar</a>
+</ng-template>

@@ -1,0 +1,14 @@
+<div class="restaurant-box">
+    <p>Restaurant {{restaurant.name}} Details:</p>
+    <br/>
+    <p>Id: {{restaurant.id}}</p>
+    <p>category: {{restaurant.category}}</p>
+    <p>deliveryEstimate: {{restaurant.deliveryEstimate}}</p>
+    <p>rating: {{restaurant.rating}}</p>
+    <img src="{{restaurant.imagePath}}" style="width:200px;height:200px;">
+
+    <a routerLinkActive="detail-active" [routerLink]="['menu']">Menu</a>&nbsp;
+    <a routerLinkActive="detail-active" [routerLink]="['reviews']">Reviews</a>
+</div>
+
+<router-outlet></router-outlet>

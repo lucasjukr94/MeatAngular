@@ -1,0 +1,7 @@
+<form [formGroup]="searchForm">
+    <input type="text" placeholder="buscar restaurantes" formControlName="searchControl"/>
+</form>
+
+<div *ngFor="let restaurant of restaurants">
+    <mt-restaurant [restaurant]="restaurant"></mt-restaurant>
+</div>

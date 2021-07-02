@@ -1,0 +1,7 @@
+<p>Reviews</p>
+<div *ngFor="let review of reviews" class="review-box">
+    <p>Nome: {{review.name}}</p>
+    <p>Rating: {{review.rating}}</p>
+    <p>Comentário: {{review.comment}}</p>
+    <p>Data: {{review.date | date:"dd/MM/yyyy"}}</p>
+</div>

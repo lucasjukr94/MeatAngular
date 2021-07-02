@@ -1,0 +1,29 @@
+<div *ngIf="!items.length">
+    <p>Não há itens no seu carrinho. Que tal começar por <a [routerLink]="['/restaurants']">aqui</a>?</p>
+</div>
+<div *ngIf="items.length">
+    <table>
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.quantity}}</td>
+                <td>{{item.menuItem.name}}</td>
+                <td>{{item.menuItem.description}}</td>
+                <td>{{item.value() | currency: 'BRL': true}}</td>
+                <td>
+                    <button (click)="emitIncreaseQty(item)">+</button>&nbsp;
+                    <button (click)="emitDecreaseQty(item)">-</button>&nbsp;
+                    <button (click)="emitRemoveQty(item)">x</button>&nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+</div>

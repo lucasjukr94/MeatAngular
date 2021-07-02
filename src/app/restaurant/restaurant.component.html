@@ -1,0 +1,10 @@
+<a [routerLink]="['/restaurants-detail', restaurant.id]">
+    <div class="restaurant-box" [@restaurantAppeared]="restaurantState">
+        <p>Id: {{restaurant.id}}</p>
+        <p>name: {{restaurant.name}}</p>
+        <p>category: {{restaurant.category}}</p>
+        <p>deliveryEstimate: {{restaurant.deliveryEstimate}}</p>
+        <p>rating: {{restaurant.rating}}</p>
+        <img src="{{restaurant.imagePath}}" style="width:200px;height:200px;">
+    </div>
+</a>

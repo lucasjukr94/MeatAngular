@@ -1,0 +1,4 @@
+<div    [class.has-success]="input.valid && (input.dirty || input.touched)"
+        [class.has-error]="input.invalid && (input.dirty || input.touched)">
+    <ng-content></ng-content>
+</div>

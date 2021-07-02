@@ -1,0 +1,6 @@
+<mt-shopping-cart #shoppingCart></mt-shopping-cart>
+
+<p>Menu</p>
+<mt-menu-item *ngFor="let item of menuItem" 
+    [menuItem]="item" 
+    (add)="shoppingCart.addItem($event)"></mt-menu-item>
